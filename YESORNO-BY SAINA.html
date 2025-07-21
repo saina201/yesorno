@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes or No</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(145deg, #e6f0ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #24416b;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #a3c8f0;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(36, 65, 107, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #86b2e0;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 2.5em;
+      font-weight: bold;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ask your question in your mind...</h1>
+  <button onclick="showAnswer()">Get Answer</button>
+  <div id="result"></div>
+
+  <script>
+    function showAnswer() {
+      const answers = ["YES ?", "NO ?"];
+      const random = Math.floor(Math.random() * answers.length);
+      const result = document.getElementById("result");
+      result.innerText = answers[random];
+    }
+  </script>
+
+</body>
+</html>
